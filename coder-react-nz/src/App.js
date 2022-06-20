@@ -1,11 +1,12 @@
+import React, { Component } from "react";
 import "./App.css";
+import { NavBar } from "./Components/NavBar";
+import { Button } from "react-bootstrap";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Empezamos :D</h1>
-      </header>
+    <div className="bg-w-custom">
+      <NavBar />
     </div>
   );
 }
