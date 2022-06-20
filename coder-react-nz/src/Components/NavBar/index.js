@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-// import { CartWidget } from '../cartWidget/cartWidget'
+import { CartWidget } from "../CartWidget";
 
 export const NavBar = () => {
   return (
@@ -53,7 +53,7 @@ export const NavBar = () => {
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  {/* <CartWidget/> */}
+                  <CartWidget />
                 </button>
               </div>
               <div

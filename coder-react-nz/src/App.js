@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import "./App.css";
+import ItemListContainer from "./Components/ItemListContainer";
 import { NavBar } from "./Components/NavBar";
-import { Button } from "react-bootstrap";
 
 function App() {
   return (
     <div className="bg-w-custom">
       <NavBar />
+      <ItemListContainer />
     </div>
   );
 }
