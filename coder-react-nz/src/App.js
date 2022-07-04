@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import "./App.css";
-import { ItemCount } from "./Components/itemCount";
 import ItemCountContainer from "./Components/ItemCountContainer";
+import ItemDetailContainer from "./Components/ItemDetailContainer";
 import ItemListContainer from "./Components/ItemListContainer";
 import { NavBar } from "./Components/NavBar";
 
@@ -10,7 +10,7 @@ function App() {
     <div className="bg-w-custom">
       <NavBar />
       <ItemListContainer />
-      <ItemCountContainer />
+      <ItemDetailContainer />
     </div>
   );
 }
