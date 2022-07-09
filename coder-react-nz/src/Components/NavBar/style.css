@@ -1,3 +1,16 @@
 .navBarPanda {
   background-color: #e6c4b1;
 }
+
+.navlink {
+  background-color: #e6c4b1;
+  color: white;
+}
+
+.active-navlink {
+  background-color: rgb(89, 131, 110);
+  color: white;
+  height: 2em;
+  width: 6em;
+  border-radius: 5px;
+}

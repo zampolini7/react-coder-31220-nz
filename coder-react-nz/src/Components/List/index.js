@@ -11,6 +11,7 @@ export const List = ({ data }) => {
         nombre={item.nombre}
         precio={item.precio}
         contenido={item.contenido}
+        categoria={item.categoria}
         cantidad={item.cantidad}
       />
     );

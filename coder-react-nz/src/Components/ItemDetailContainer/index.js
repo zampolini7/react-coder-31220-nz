@@ -1,27 +1,27 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
+import { boxes } from "../../data/data";
 import { ItemDetail } from "../itemDetail";
 
 const ItemDetailContainer = () => {
-  const data = {
-    id: 1,
-    nombre: "DeliBox",
-    precio: 3650,
-    contenido:
-      "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\n\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
-    img: "https://picsum.photos/200/300",
-
-    cantidad: 1,
-  };
-
-  const [item, setItem] = useState("");
-
+  const { id } = useParams();
+  const [item, setItem] = useState({});
+  console.log(id);
   const taskPromise = new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(true);
-    }, 6000); // 3 segundos
+      // const myData = id ? boxes.filter((box) => box.id === id) : boxes[1];
+      // console.log(myData);
+      const myData = boxes.filter((box) => box.id == id);
+      console.log(myData);
+
+      const myItem = myData[0];
+
+      resolve(myItem);
+    }, 3000); // 3 segundos
   });
-  taskPromise.then(() => {
-    setItem(data);
+  taskPromise.then((res) => {
+    setItem(res);
+    console.log(item);
   });
 
   return item === "" ? <div>Cargando...</div> : <ItemDetail item={item} />;

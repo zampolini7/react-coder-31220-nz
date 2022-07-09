@@ -3,6 +3,7 @@ import "./style.css";
 import { ItemCount } from "../itemCount";
 
 export const ItemDetail = ({ item }) => {
+  console.log(item.img);
   return (
     <div>
       <div className="item-container">
