@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
+import { CartContext } from "../../CartContext";
 import { boxes } from "../../data/data";
 import { ItemDetail } from "../itemDetail";
 

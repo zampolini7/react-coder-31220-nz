@@ -1,8 +1,7 @@
 import React from "react";
 import { Item } from "../Item";
 
-export const List = ({ data }) => {
-  console.log(data);
+export const List = ({ data, addToCart }) => {
   return data.map((item) => {
     return (
       <Item
@@ -12,7 +11,8 @@ export const List = ({ data }) => {
         precio={item.precio}
         contenido={item.contenido}
         categoria={item.categoria}
-        cantidad={item.cantidad}
+        quantity={item.quantity}
+        addToCart={addToCart}
       />
     );
   });

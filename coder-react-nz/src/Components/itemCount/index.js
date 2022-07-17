@@ -1,8 +1,11 @@
 // import { Products } from '../products/products'
 import "./index.css";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { CartContext } from "../../CartContext";
 
 export const ItemCount = ({ stock, contador, sumar, restar, onAdd }) => {
+  const { addToCart } = useContext(CartContext);
+
   return (
     <div className="Container-div-ItenCount">
       <p className="Container-p-ItenCount"> PRODUCTO X - Stock: {stock}</p>
@@ -15,7 +18,7 @@ export const ItemCount = ({ stock, contador, sumar, restar, onAdd }) => {
           <p> + </p>
         </button>
       </div>
-      <button onClick={onAdd} className="btn-agregar">
+      <button onClick={addToCart} className="btn-agregar">
         {" "}
         Agregar al carrito
       </button>

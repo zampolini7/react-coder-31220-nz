@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
+import { CartContext } from "../../CartContext";
 import { boxes } from "../../data/data";
 import { List } from "../List";
 import "./style.css";
@@ -7,6 +8,8 @@ import "./style.css";
 const ItemListContainer = () => {
   const [data, setData] = useState("");
   const { catid } = useParams();
+  const { addToCart } = useContext(CartContext);
+
   const taskPromise = new Promise((resolve, reject) => {
     setTimeout(() => {
       const myData = catid
@@ -18,7 +21,6 @@ const ItemListContainer = () => {
   });
   taskPromise.then((res) => {
     setData(res);
-    console.log(res);
   });
 
   return data === "" ? (
@@ -27,7 +29,7 @@ const ItemListContainer = () => {
     <div className="container bg-w-custom">
       <div className="d-flex row flex-row ">
         <div className="d-flex col-12 flex-wrap ">
-          <List data={data} />
+          <List data={data} addToCart={addToCart} />
         </div>
       </div>
     </div>

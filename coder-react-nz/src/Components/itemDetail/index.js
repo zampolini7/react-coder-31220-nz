@@ -31,7 +31,7 @@ export const ItemDetail = ({ item }) => {
               Contenido: {item.contenido}{" "}
             </p>
 
-            <ItemCount classname="itemDetail-itemCount" stock={item.cantidad} />
+            <ItemCount classname="itemDetail-itemCount" stock={item.quantity} />
           </div>
         </div>
       </div>
