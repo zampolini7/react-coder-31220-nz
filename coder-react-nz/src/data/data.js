@@ -7,7 +7,8 @@ export const boxes = [
     contenido:
       "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\n\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
     img: "https://picsum.photos/200/300",
-    quantity: 1,
+    quantity: 0,
+    stock: 10,
   },
   {
     id: 2,
@@ -18,7 +19,8 @@ export const boxes = [
       "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\n\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
     // img: "parriboxvino1.jpeg",
     img: "https://picsum.photos/200/300",
-    quantity: 1,
+    quantity: 0,
+    stock: 10,
   },
   {
     id: 3,
@@ -29,7 +31,8 @@ export const boxes = [
       "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\n\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
     // img: "winebox1.jpeg",
     img: "https://picsum.photos/200/300",
-    quantity: 1,
+    quantity: 0,
+    stock: 10,
   },
   {
     id: 4,
@@ -40,7 +43,8 @@ export const boxes = [
       "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\n\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
     // img: "wakeupbox.jpeg",
     img: "https://picsum.photos/200/300",
-    quantity: 1,
+    quantity: 0,
+    stock: 10,
   },
   {
     id: 5,
@@ -51,7 +55,8 @@ export const boxes = [
       "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\n\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
     // img: "beerbox.jpeg",
     img: "https://picsum.photos/200/300",
-    quantity: 1,
+    quantity: 0,
+    stock: 10,
   },
   {
     id: 6,
@@ -62,7 +67,8 @@ export const boxes = [
       "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\n\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
     // img: "aperolbox.jpeg",
     img: "https://picsum.photos/200/300",
-    quantity: 1,
+    quantity: 0,
+    stock: 10,
   },
   {
     id: 7,
@@ -73,7 +79,8 @@ export const boxes = [
       "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\n\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
     // img: "ginbox2.jpeg",
     img: "https://picsum.photos/200/300",
-    quantity: 1,
+    quantity: 0,
+    stock: 10,
   },
   {
     id: 8,
@@ -84,7 +91,8 @@ export const boxes = [
       "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\n\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
     // img: "memoriesbox.jpeg",
     img: "https://picsum.photos/200/300",
-    quantity: 1,
+    quantity: 0,
+    stock: 10,
   },
   {
     id: 9,
@@ -95,7 +103,8 @@ export const boxes = [
       "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\n\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
     // img: "teatimebox.jpeg",
     img: "https://picsum.photos/200/300",
-    quantity: 1,
+    quantity: 0,
+    stock: 10,
   },
   {
     id: 10,
@@ -106,7 +115,8 @@ export const boxes = [
       "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\n\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
     // img: "provo2.jpeg",
     img: "https://picsum.photos/200/300",
-    quantity: 1,
+    quantity: 0,
+    stock: 10,
   },
   {
     id: 11,
@@ -117,6 +127,7 @@ export const boxes = [
       "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\n\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
     // img: "movie2.jpeg",
     img: "https://picsum.photos/200/300",
-    quantity: 1,
+    quantity: 0,
+    stock: 10,
   },
 ];

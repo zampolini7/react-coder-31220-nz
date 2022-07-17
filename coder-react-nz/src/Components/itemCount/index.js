@@ -3,22 +3,33 @@ import "./index.css";
 import React, { useContext, useState } from "react";
 import { CartContext } from "../../CartContext";
 
-export const ItemCount = ({ stock, contador, sumar, restar, onAdd }) => {
+export const ItemCount = ({
+  item,
+  stock,
+  quantityDetail,
+  addQuantity,
+  removeQuantity,
+  setQuantityDetail,
+}) => {
   const { addToCart } = useContext(CartContext);
+  const handleClick = () => {
+    addToCart(item.id, quantityDetail);
+    setQuantityDetail(0);
+  };
 
   return (
     <div className="Container-div-ItenCount">
       <p className="Container-p-ItenCount"> PRODUCTO X - Stock: {stock}</p>
       <div className="Container-ItemCount">
-        <button className="btn-ItemCount" onClick={restar}>
+        <button className="btn-ItemCount" onClick={removeQuantity}>
           <p> - </p>
         </button>
-        <p className="p-ItemCount"> {contador}</p>
-        <button className="btn-ItemCount" onClick={sumar}>
+        <p className="p-ItemCount"> {quantityDetail}</p>
+        <button className="btn-ItemCount" onClick={addQuantity}>
           <p> + </p>
         </button>
       </div>
-      <button onClick={addToCart} className="btn-agregar">
+      <button onClick={handleClick} className="btn-agregar">
         {" "}
         Agregar al carrito
       </button>

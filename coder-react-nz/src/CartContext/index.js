@@ -21,43 +21,38 @@ const CartProvider = ({ children }) => {
   taskPromise.then((res) => {
     setData(res);
   });
-  // let foundItemInCart = -1;
 
-  const addToCart = (itemId) => {
+  const addToCart = (itemId, quantityDetail) => {
     let foundItemInCart = data.filter((e) => e.id === itemId);
-    // setCart([...cart, foundItemInCart[0]]);
 
     let itemInCart = cart.find((e) => e.id === itemId);
     console.log(itemInCart);
 
     if (itemInCart === undefined) {
-      setCart([...cart, foundItemInCart[0]]);
-      setQuantity(quantity + 1);
-      console.log(cart);
-      console.log(quantity);
-    } else {
-      setQuantity(quantity + 1);
-      itemInCart.quantity += 1;
-      cart.splice(cart.indexOf(itemInCart), 1, itemInCart);
-      console.log(cart);
-      console.log(quantity);
-    }
+      if (quantityDetail >= 1) {
+        console.log(foundItemInCart[0]);
+        foundItemInCart[0].quantity += quantityDetail;
+        foundItemInCart[0].stock -= quantityDetail;
 
-    // if (itemInCart) {
-    //   setCart((prevCart) => {
-    //     return prevCart.map((e) => {
-    //       if (e.id === itemId) {
-    //         e.quantity += 1;
-    //       }
-    //       return e;
-    //     });
-    //   });
-    // } else {
-    //   setCart((prevCart) => [...prevCart, foundItemInCart[0]]);
-    //   console.log(cart);
-    //   console.log(quantity);
-    // }
-    // setQuantity((prevQuantity) => prevQuantity + 1);
+        setCart([...cart, foundItemInCart[0]]);
+      } else {
+        itemInCart.quantity += 1;
+        itemInCart.stock -= 1;
+        cart.splice(cart.indexOf(itemInCart), 1, itemInCart);
+        setQuantity(quantity + 1);
+      }
+    } else {
+      if (quantityDetail >= 1) {
+        itemInCart.quantity += quantityDetail;
+        itemInCart.stock -= quantityDetail;
+        cart.splice(cart.indexOf(itemInCart), 1, itemInCart);
+      } else {
+        setQuantity(quantity + 1);
+        itemInCart.stock -= 1;
+        itemInCart.quantity += 1;
+        cart.splice(cart.indexOf(itemInCart), 1, itemInCart);
+      }
+    }
   };
 
   const RemoveFromCart = (itemId) => {
@@ -86,6 +81,7 @@ const CartProvider = ({ children }) => {
         quantity,
         setCart,
         setQuantity,
+        Clear,
       }}
     >
       {children}
