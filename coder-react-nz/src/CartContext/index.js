@@ -26,13 +26,14 @@ const CartProvider = ({ children }) => {
     let foundItemInCart = data.filter((e) => e.id === itemId);
 
     let itemInCart = cart.find((e) => e.id === itemId);
-    console.log(itemInCart);
+    console.log(cart);
 
-    if (itemInCart === undefined) {
+    if (itemInCart === undefined && quantityDetail > 0) {
       if (quantityDetail >= 1) {
         console.log(foundItemInCart[0]);
         foundItemInCart[0].quantity += quantityDetail;
         foundItemInCart[0].stock -= quantityDetail;
+        setQuantity(quantity + quantityDetail);
 
         setCart([...cart, foundItemInCart[0]]);
       } else {
@@ -41,11 +42,18 @@ const CartProvider = ({ children }) => {
         cart.splice(cart.indexOf(itemInCart), 1, itemInCart);
         setQuantity(quantity + 1);
       }
+    } else if (!itemInCart && !quantityDetail) {
+      foundItemInCart[0].quantity += 1;
+      foundItemInCart[0].stock -= 1;
+      setQuantity(quantity + 1);
+      setCart([...cart, foundItemInCart[0]]);
+      console.log(cart);
     } else {
       if (quantityDetail >= 1) {
         itemInCart.quantity += quantityDetail;
         itemInCart.stock -= quantityDetail;
         cart.splice(cart.indexOf(itemInCart), 1, itemInCart);
+        setQuantity(quantity + quantityDetail);
       } else {
         setQuantity(quantity + 1);
         itemInCart.stock -= 1;
@@ -58,6 +66,8 @@ const CartProvider = ({ children }) => {
   const RemoveFromCart = (itemId) => {
     const newCart = cart.filter((item) => item.id !== itemId.id);
     setCart(newCart);
+
+    setQuantity(quantity - itemId.quantity);
   };
 
   const Clear = () => {

@@ -5,6 +5,7 @@ import "./style.css";
 
 export const Item = ({
   img,
+  stock,
   nombre,
   categoria,
   contenido,
@@ -20,14 +21,17 @@ export const Item = ({
         <span>{categoria}</span>
 
         <p> {contenido}</p>
-
-        <a
-          id={id}
-          class="btn text-light bg-dark d-flex justify-content-center btnComprar"
-          onClick={() => addToCart(id)}
-        >
-          Agregar al carrito x {precio}
-        </a>
+        {stock === 0 ? (
+          <p>No hay stock</p>
+        ) : (
+          <a
+            id={id}
+            class="btn text-light bg-dark d-flex justify-content-center btnComprar"
+            onClick={() => addToCart(id)}
+          >
+            Agregar al carrito x {precio}
+          </a>
+        )}
         <button
           id={id}
           class="btn text-light bg-dark d-flex justify-content-center btnComprar"

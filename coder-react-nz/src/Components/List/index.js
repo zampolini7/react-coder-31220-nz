@@ -9,6 +9,7 @@ export const List = ({ data, addToCart }) => {
         id={item.id}
         nombre={item.nombre}
         precio={item.precio}
+        img={item.img}
         contenido={item.contenido}
         categoria={item.categoria}
         quantity={item.quantity}

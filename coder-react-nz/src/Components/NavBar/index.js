@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./style.css";
 import { CartWidget } from "../CartWidget";
 import { NavLink } from "react-router-dom";
 import { useParams } from "react-router";
+import { CartContext } from "../../CartContext";
 
-export const NavBar = ({ cartQuantity = 0 }) => {
-  const { itemsId } = useParams();
+export const NavBar = () => {
+  const { quantity } = useContext(CartContext);
   return (
     <div className="App container   ">
       <nav className="container-fluid navbar navbar-expand-lg navbar-light  d-flex fixed-top navBarPanda  ">
@@ -62,7 +63,14 @@ export const NavBar = ({ cartQuantity = 0 }) => {
               activeClassName="active-navlink"
               className="navlink"
             >
-              <CartWidget />( {cartQuantity})
+              {quantity > 0 ? (
+                <>
+                  <CartWidget />
+                  {quantity}
+                </>
+              ) : (
+                ""
+              )}
             </NavLink>
           </li>
         </div>
