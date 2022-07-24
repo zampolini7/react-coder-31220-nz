@@ -21,13 +21,13 @@ const CartContainer = () => {
             <div className="col-6">
               <Cart
                 item={item}
-                img={item.img}
+                imageId={item.imageId}
                 stock={item.stock}
-                nombre={item.nombre}
-                categoria={item.categoria}
-                contenido={item.contenido}
+                title={item.title}
+                categoryId={item.categoryId}
+                description={item.description}
                 id={item.id}
-                precio={item.precio}
+                price={item.price}
                 quantity={item.quantity}
                 RemoveFromCart={RemoveFromCart}
               />

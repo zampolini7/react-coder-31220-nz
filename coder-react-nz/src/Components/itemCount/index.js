@@ -29,7 +29,11 @@ export const ItemCount = ({
           <p> + </p>
         </button>
       </div>
-      <button onClick={handleClick} className="btn-agregar">
+      <button
+        onClick={handleClick}
+        disabled={stock === 0 ? true : false}
+        className="btn-agregar"
+      >
         {" "}
         Agregar al carrito
       </button>

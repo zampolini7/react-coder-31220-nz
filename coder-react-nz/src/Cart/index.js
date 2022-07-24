@@ -1,28 +1,29 @@
 import React from "react";
 import "./style.css";
 export const Cart = ({
-  img,
+  imageId,
   stock,
-  nombre,
-  categoria,
-  contenido,
+  title,
+  categoryId,
+  description,
   id,
-  precio,
+  price,
   quantity,
   RemoveFromCart,
   item,
 }) => {
   return (
     <div class="card col-8  d-flex m-2">
-      <img class="card-img-top" src={img} alt="Card image cap" />
+      <img class="card-img-top" src={imageId} alt="Card image cap" />
       <div class="card-body">
-        <h5 class="card-title"> {nombre}</h5>
-        <p> Categoria: {categoria}</p>
+        <h5 class="card-title"> {title}</h5>
+        <p> Categoria: {categoryId}</p>
 
-        <p> {contenido}</p>
-        <p> stock actual: {stock}</p>
+        <p> {description}</p>
         <p>cantidad a comprar: {quantity}</p>
-        <p>Precio total de este producto: {precio}</p>
+        <p>Precio por unidad de este producto: {price}</p>
+
+        <p>Precio total de este producto: {price * quantity}</p>
         <button
           onClick={() => RemoveFromCart(item)}
           id={id}

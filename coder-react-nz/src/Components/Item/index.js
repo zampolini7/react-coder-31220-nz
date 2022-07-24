@@ -4,23 +4,23 @@ import { ItemDetail } from "../itemDetail";
 import "./style.css";
 
 export const Item = ({
-  img,
+  imageId,
   stock,
-  nombre,
-  categoria,
-  contenido,
+  title,
+  categoryId,
+  description,
   id,
-  precio,
+  price,
   addToCart,
 }) => {
   return (
     <div class="card col-3 d-flex m-2 ">
-      <img class="card-img-top" src={img} alt="Card image cap" />
+      <img class="card-img-top" src={imageId} alt="Card image cap" />
       <div class="card-body">
-        <h5 class="card-title"> {nombre}</h5>
-        <span>{categoria}</span>
+        <h5 class="card-title"> {title}</h5>
+        <span>{categoryId}</span>
 
-        <p> {contenido}</p>
+        <p> {description}</p>
         {stock === 0 ? (
           <p>No hay stock</p>
         ) : (
@@ -28,8 +28,9 @@ export const Item = ({
             id={id}
             class="btn text-light bg-dark d-flex justify-content-center btnComprar"
             onClick={() => addToCart(id)}
+            disabled={stock === 0 ? true : false}
           >
-            Agregar al carrito x {precio}
+            Agregar al carrito x {price}
           </a>
         )}
         <button

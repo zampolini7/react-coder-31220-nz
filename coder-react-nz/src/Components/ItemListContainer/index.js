@@ -13,7 +13,7 @@ const ItemListContainer = () => {
   const taskPromise = new Promise((resolve, reject) => {
     setTimeout(() => {
       const myData = catid
-        ? boxes.filter((box) => box.categoria === catid)
+        ? boxes.filter((box) => box.categoryId === catid)
         : boxes;
 
       resolve(myData);

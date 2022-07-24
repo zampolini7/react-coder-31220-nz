@@ -15,7 +15,7 @@ export const ItemDetail = ({
         <div className="itemDetail-div">
           <div id={item.id} className="itemDetail-div-lateral-bajo">
             <img
-              src={item.img}
+              src={item.imageId}
               alt="acá va la imagen"
               className="itemDetail-img"
             />
@@ -25,8 +25,8 @@ export const ItemDetail = ({
                 {" "}
                 Precio: $
                 {quantityDetail === 0
-                  ? item.precio
-                  : item.precio * quantityDetail}{" "}
+                  ? item.price
+                  : item.price * quantityDetail}{" "}
               </p>
               <p className="itemDetail-div-bajo-p">
                 Cantidad: {quantityDetail}{" "}
@@ -36,10 +36,10 @@ export const ItemDetail = ({
             {/* <button className="btn-detail">Comprar ahora </button> */}
           </div>
           <div className="itemDetail-div-Lateral">
-            <h2 className="itemDetail-h2"> Nombre : {item.nombre} </h2>
+            <h2 className="itemDetail-h2"> Nombre : {item.title} </h2>
             <p className="itemDetail-div-Lateral-p">
               {" "}
-              Contenido: {item.contenido}{" "}
+              Contenido: {item.description}{" "}
             </p>
 
             <ItemCount

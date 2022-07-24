@@ -1,9 +1,13 @@
 import React, { createContext, useEffect, useState } from "react";
 import { boxes } from "../data/data";
-
+import { getColection } from "../firebase/getColection";
 export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
+  getColection().then((data) => {
+    console.log(data);
+  });
+
   const [data, setData] = useState("");
   const [cart, setCart] = useState([]);
   const [quantity, setQuantity] = useState(0);
