@@ -4,27 +4,9 @@ import { getColection } from "../firebase/getColection";
 export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
-  getColection().then((data) => {
-    console.log(data);
-  });
-
   const [data, setData] = useState("");
   const [cart, setCart] = useState([]);
   const [quantity, setQuantity] = useState(0);
-
-  useEffect(() => {
-    console.log(cart);
-    console.log(quantity);
-  }, [cart]);
-  const taskPromise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const myData = boxes;
-      resolve(myData);
-    }, 3000); // 3 segundos
-  });
-  taskPromise.then((res) => {
-    setData(res);
-  });
 
   const addToCart = (itemId, quantityDetail) => {
     let foundItemInCart = data.filter((e) => e.id === itemId);
@@ -96,6 +78,8 @@ const CartProvider = ({ children }) => {
         setCart,
         setQuantity,
         Clear,
+        setData,
+        data,
       }}
     >
       {children}

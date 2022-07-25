@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../CartContext";
 import { boxes } from "../../data/data";
+import { getProduct } from "../../firebase/getProduct";
 import { ItemDetail } from "../itemDetail";
 
 const ItemDetailContainer = () => {
@@ -26,25 +27,16 @@ const ItemDetailContainer = () => {
       setQuantityDetail(quantityDetail - 1);
     }
   };
-  const taskPromise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (cart.length > 0) {
-        const myData = cart.filter((box) => box.id == id);
 
-        const myItem = myData[0];
-        resolve(myItem);
-      } else {
-        const myData = boxes.filter((box) => box.id == id);
-
-        const myItem = myData[0];
-
-        resolve(myItem);
-      }
-    }, 3000); // 3 segundos
-  });
-  taskPromise.then((res) => {
-    setItem(res);
-  });
+  useEffect(() => {
+    getProduct(id)
+      .then((data) => {
+        setItem(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   return item === "" ? (
     <div>Cargando...</div>

@@ -1,35 +1,41 @@
-import React, { useContext, useState } from "react";
+import { collection, getDoc, getDocs, getFirestore } from "firebase/firestore";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../CartContext";
 import { boxes } from "../../data/data";
+import { getColection } from "../../firebase/getColection";
+import { getColectionByCategory } from "../../firebase/getColectionByCategory";
 import { List } from "../List";
 import "./style.css";
 
 const ItemListContainer = () => {
-  const [data, setData] = useState("");
+  const [dataListContainer, setDataListContainer] = useState("");
   const { catid } = useParams();
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, setData, data } = useContext(CartContext);
 
-  const taskPromise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const myData = catid
-        ? boxes.filter((box) => box.categoryId === catid)
-        : boxes;
+  useEffect(() => {
+    getColection().then((data) => {
+      setData(data);
+    });
+  }, []);
 
-      resolve(myData);
-    }, 3000); // 3 segundos
-  });
-  taskPromise.then((res) => {
-    setData(res);
-  });
+  useEffect(() => {
+    if (catid) {
+      getColectionByCategory(catid).then((d) => {
+        setDataListContainer(d);
+      });
+    } else {
+      setDataListContainer(data);
+    }
+  }, [catid]);
 
-  return data === "" ? (
+  return dataListContainer === "" ? (
     <div>Cargando...</div>
   ) : (
     <div className="container bg-w-custom">
       <div className="d-flex row flex-row ">
         <div className="d-flex col-12 flex-wrap ">
-          <List data={data} addToCart={addToCart} />
+          <List data={dataListContainer} addToCart={addToCart} />
         </div>
       </div>
     </div>
