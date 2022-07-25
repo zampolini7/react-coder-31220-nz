@@ -1,8 +1,6 @@
-import { collection, getDoc, getDocs, getFirestore } from "firebase/firestore";
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../CartContext";
-import { boxes } from "../../data/data";
 import { getColection } from "../../firebase/getColection";
 import { getColectionByCategory } from "../../firebase/getColectionByCategory";
 import { List } from "../List";
