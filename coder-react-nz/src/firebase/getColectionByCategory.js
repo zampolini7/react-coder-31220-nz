@@ -3,24 +3,30 @@ import { useState } from "react";
 import { db } from ".";
 
 export const getColectionByCategory = async (catId) => {
-  const datafiltrada = [];
-  const q = query(collection(db, "items"), where("categoryId", "==", catId));
+  // const datafiltrada = [];
+  // const q = query(collection(db, "items"), where("categoryId", "==", catId));
 
-  getDocs(q).then((data) => {
-    data.docs.map((item) => {
-      datafiltrada.push(item.data());
-    });
-  });
-
-  return datafiltrada;
-
-  // const myData = await getDocs(q);
-  // myData.forEach((doc) => {
-  //   return {
-  //     id: doc.id,
-  //     ...doc.data(),
-  //   };
+  // getDocs(q).then((data) => {
+  //   data.docs.map((item) => {
+  //     datafiltrada.push(item.data());
+  //   });
   // });
-  // console.log(myData);
-  // return myData;
+
+  // return datafiltrada;
+
+  try {
+    const q = query(collection(db, "items"), where("categoryId", "==", catId));
+    const querySnapshot = await getDocs(q);
+
+    const itemDataQuerySnapShot = querySnapshot.docs.map((doc) => {
+      return {
+        id: doc.id,
+        ...doc.data(),
+      };
+    });
+    return itemDataQuerySnapShot;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
 };

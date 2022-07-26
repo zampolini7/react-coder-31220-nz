@@ -7,7 +7,7 @@ import { List } from "../List";
 import "./style.css";
 
 const ItemListContainer = () => {
-  const [dataListContainer, setDataListContainer] = useState("");
+  const [dataListContainer, setDataListContainer] = useState(null);
   const { catid } = useParams();
   const { addToCart, setData, data } = useContext(CartContext);
 
@@ -15,18 +15,18 @@ const ItemListContainer = () => {
     if (catid) {
       console.log("catid", catid);
       getColectionByCategory(catid).then((data) => {
-        console.log("data", data);
-        // setDataListContainer(data);
+        console.log(data);
+        setDataListContainer(data);
       });
     } else {
       getColection().then((data) => {
         setDataListContainer(data);
-        console.log("data", data);
+        console.log(data);
       });
     }
   }, [catid]);
 
-  return dataListContainer === "" ? (
+  return dataListContainer === null ? (
     <div>Cargando...</div>
   ) : (
     <div className="container bg-w-custom">
