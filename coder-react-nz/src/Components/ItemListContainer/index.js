@@ -12,18 +12,17 @@ const ItemListContainer = () => {
   const { addToCart, setData, data } = useContext(CartContext);
 
   useEffect(() => {
-    getColection().then((data) => {
-      setData(data);
-    });
-  }, []);
-
-  useEffect(() => {
     if (catid) {
-      getColectionByCategory(catid).then((d) => {
-        setDataListContainer(d);
+      console.log("catid", catid);
+      getColectionByCategory(catid).then((data) => {
+        console.log("data", data);
+        // setDataListContainer(data);
       });
     } else {
-      setDataListContainer(data);
+      getColection().then((data) => {
+        setDataListContainer(data);
+        console.log("data", data);
+      });
     }
   }, [catid]);
 
