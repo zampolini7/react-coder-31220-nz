@@ -10,11 +10,12 @@ export const addOrderToFb = async (cart) => {
         email: "n@z.com",
       },
       items: cart,
-      total: cart.reduce((acc, item) => acc + item.price, 0),
+      total: cart.reduce((acc, item) => acc + item.price * item.quantity, 0),
       date: new Date(),
     };
 
     const docRef = await addDoc(collection(db, "orders"), order);
+
     console.log("orden generada con el ID: ", docRef.id);
     alert("orden generada con el ID: " + docRef.id);
   } catch (e) {
