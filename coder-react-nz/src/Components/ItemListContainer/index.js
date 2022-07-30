@@ -17,11 +17,13 @@ const ItemListContainer = () => {
       getColectionByCategory(catid).then((data) => {
         console.log(data);
         setDataListContainer(data);
+        setData(data);
       });
     } else {
       getColection().then((data) => {
         setDataListContainer(data);
         console.log(data);
+        setData(data);
       });
     }
   }, [catid]);

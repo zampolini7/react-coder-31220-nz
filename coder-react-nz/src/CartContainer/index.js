@@ -42,7 +42,10 @@ const CartContainer = () => {
         {cart.length > 0 ? (
           <div className="row">
             <div className="col-12">
-              <button className="btn btn-success" onClick={addOrderToFb(cart)}>
+              <button
+                className="btn btn-success"
+                onClick={() => addOrderToFb(cart)}
+              >
                 <h2>Terminar compra :)</h2>
               </button>
             </div>
