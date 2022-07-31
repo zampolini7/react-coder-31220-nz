@@ -9,8 +9,9 @@ const CartProvider = ({ children }) => {
   const [quantity, setQuantity] = useState(0);
 
   const addToCart = (itemId, quantityDetail) => {
+    console.log(data);
     let foundItemInCart = data.filter((e) => e.id === itemId);
-
+    console.log(foundItemInCart);
     let itemInCart = cart.find((e) => e.id === itemId);
     console.log(cart);
 

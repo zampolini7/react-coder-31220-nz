@@ -3,7 +3,7 @@
   width: 90vw;
   font-family: "Roboto", sans-serif;
   font-size: 20px;
-  margin-left: 75px;
+  /* margin-left: 75px; */
   margin-top: 100px;
   align-items: center;
   justify-content: center;
@@ -11,9 +11,9 @@
 }
 
 .btn-detail {
-  border: 1px solid rgb(89, 114, 131);
+  border: 1px solid #212529;
   border-radius: 5px;
-  background-color: rgb(89, 114, 131);
+  background-color: #212529;
 
   height: 36px;
   width: auto;
@@ -26,7 +26,7 @@
   display: flex;
   background-color: #e6c4b1;
   /* flex-wrap: wrap; */
-  border: 2px solid rgb(89, 114, 131);
+  border: 2px solid #212529;
   border-radius: 10px;
   width: 86.5vw;
   height: 80vh;

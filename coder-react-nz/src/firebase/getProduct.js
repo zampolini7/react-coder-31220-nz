@@ -7,7 +7,10 @@ export const getProduct = async (id) => {
     const docRef = doc(querySnapshot, id);
 
     const docSnapshot = await getDoc(docRef);
-    return docSnapshot.data();
+    return {
+      id: docSnapshot.id,
+      ...docSnapshot.data(),
+    };
   } catch (error) {
     console.log(error);
     return error;

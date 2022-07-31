@@ -9,7 +9,7 @@ const ItemDetailContainer = () => {
   const { id } = useParams();
   const [item, setItem] = useState({});
   const [quantityDetail, setQuantityDetail] = useState(0);
-  const { cart } = useContext(CartContext);
+  const { cart, data } = useContext(CartContext);
 
   const addQuantity = () => {
     if (item.stock > 0 && quantityDetail < item.stock) {
@@ -29,6 +29,7 @@ const ItemDetailContainer = () => {
   };
 
   useEffect(() => {
+    console.log(data);
     getProduct(id)
       .then((data) => {
         setItem(data);
