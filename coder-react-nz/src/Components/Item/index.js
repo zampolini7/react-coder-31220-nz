@@ -35,9 +35,11 @@ export const Item = ({
         )}
         <button
           id={id}
-          class="btn text-light bg-dark d-flex justify-content-center btnComprar"
+          class="btn btn-link w-100  d-flex justify-content-center btnComprar"
         >
-          <Link to={`/item/${id}`}>Ver detalle del producto</Link>
+          <Link className="linkComprar" to={`/item/${id}`}>
+            <h6>Ver detalle del producto</h6>
+          </Link>
         </button>
       </div>
     </div>

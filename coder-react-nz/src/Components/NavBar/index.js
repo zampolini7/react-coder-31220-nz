@@ -8,7 +8,7 @@ import { CartContext } from "../../CartContext";
 export const NavBar = () => {
   const { quantity } = useContext(CartContext);
   return (
-    <div className="App container   ">
+    <div className=" ">
       <nav className="container-fluid navbar navbar-expand-lg navbar-light  d-flex fixed-top navBarPanda  ">
         <NavLink
           exact
@@ -16,8 +16,7 @@ export const NavBar = () => {
           activeClassName="active-navlink"
           className="navlink align-self-center m-3"
         >
-          {" "}
-          PANDA{" "}
+          <h5>PANDA</h5>
         </NavLink>
         <button
           className="navbar-toggler navBarPanda "
@@ -39,8 +38,7 @@ export const NavBar = () => {
                 activeClassName="active-navlink"
                 className="navlink"
               >
-                {" "}
-                items{" "}
+                <h5>items</h5>
               </NavLink>
             </li>
 
@@ -50,8 +48,7 @@ export const NavBar = () => {
                 activeClassName="active-navlink"
                 className="navlink "
               >
-                {" "}
-                Contacto{" "}
+                <h5>Contacto</h5>
               </NavLink>
             </li>
           </ul>

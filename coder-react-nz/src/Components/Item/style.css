@@ -10,3 +10,15 @@
   display: flex;
   margin: 200px;
 }
+
+.btnComprar {
+  text-decoration: none;
+}
+.linkComprar {
+  color: #212529;
+  text-decoration: auto;
+}
+.linkComprar:hover {
+  color: #474d54;
+  text-decoration: auto;
+}
