@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { CartContext } from "../../CartContext";
 import { getColection } from "../../firebase/getColection";
 import { getColectionByCategory } from "../../firebase/getColectionByCategory";
+import LoaderCards from "../../LoaderCards";
 import { List } from "../List";
 import "./style.css";
 
@@ -29,7 +30,13 @@ const ItemListContainer = () => {
   }, [catid]);
 
   return dataListContainer === null ? (
-    <div>Cargando...</div>
+    <div className="container container-loader-cust ">
+      <div className="d-flex row flex-row ">
+        <div className="d-flex col-12 flex-wrap ">
+          <LoaderCards />
+        </div>
+      </div>
+    </div>
   ) : (
     <div className="container bg-w-custom">
       <div className="d-flex row flex-row ">

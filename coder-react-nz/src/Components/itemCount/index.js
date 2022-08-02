@@ -1,6 +1,6 @@
 // import { Products } from '../products/products'
 import "./index.css";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../CartContext";
 
 export const ItemCount = ({
@@ -17,6 +17,10 @@ export const ItemCount = ({
     addToCart(item.id, quantityDetail);
     setQuantityDetail(0);
   };
+
+  useEffect(() => {
+    console.log(stock);
+  }, [addToCart]);
 
   return (
     <div className="Container-div-ItenCount">

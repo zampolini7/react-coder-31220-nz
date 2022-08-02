@@ -4,3 +4,9 @@
 .bg-w-custom {
   background-color: #e6c4b1;
 }
+
+.container-loader-cust {
+  margin: 40px;
+  padding: 95px;
+  padding-left: 125px;
+}

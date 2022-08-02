@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Cart } from "../Cart";
 import { CartContext } from "../CartContext";
 import { addOrderToFb } from "../firebase/addOrder";
+import "./style.css";
 
 const CartContainer = () => {
   const {
@@ -13,6 +14,15 @@ const CartContainer = () => {
     setQuantity,
     Clear,
   } = useContext(CartContext);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addOrderToFb(cart);
+    setTimeout(() => {
+      setCart([]);
+      setQuantity(0);
+    }, 3000);
+  };
 
   return (
     <div className="container">
@@ -35,17 +45,14 @@ const CartContainer = () => {
             </div>
           ))
         ) : (
-          <div className="text-center">
+          <div className="text-center text-cart-empty">
             <h1>No hay productos en el carrito</h1>
           </div>
         )}
         {cart.length > 0 ? (
           <div className="row">
             <div className="col-12">
-              <button
-                className="btn btn-success"
-                onClick={() => addOrderToFb(cart)}
-              >
+              <button className="btn btn-success" onClick={handleSubmit}>
                 <h2>Terminar compra :)</h2>
               </button>
             </div>
