@@ -15,4 +15,4 @@ En un proyecto simulado, con muchas cosas por mejorar, espero que puedas entende
 
 ## Gif de demo:
 
-1[https://github.com/zampolini7/react-coder-31220-nz/blob/main/coder-react-nz/src/img/PandaGif%20.gif](PandaGif)
+[https://github.com/zampolini7/react-coder-31220-nz/blob/main/coder-react-nz/src/img/PandaGif%20.gif]
