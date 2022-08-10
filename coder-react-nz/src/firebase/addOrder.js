@@ -1,5 +1,6 @@
 import { collection, addDoc } from "firebase/firestore";
 import { db } from ".";
+import { batchStock } from "./batchStock";
 
 export const addOrderToFb = async (cart) => {
   try {
@@ -15,9 +16,10 @@ export const addOrderToFb = async (cart) => {
     };
 
     const docRef = await addDoc(collection(db, "orders"), order);
-
     console.log("orden generada con el ID: ", docRef.id);
     alert("orden generada con el ID: " + docRef.id);
+    // const newData = await batchStock(cart);
+    // console.log(newData);
   } catch (e) {
     console.error("Error adding document: ", e);
   }

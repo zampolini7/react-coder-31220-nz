@@ -36,7 +36,9 @@ export const ItemCount = ({
         <div className="w-100 d-flex div-btn-agregar ms-5">
           <button
             onClick={handleClick}
-            disabled={stock === 0 ? true : false}
+            disabled={
+              stock === 0 ? true : false || quantityDetail === 0 ? true : false
+            }
             className="btn-agregar"
           >
             {" "}

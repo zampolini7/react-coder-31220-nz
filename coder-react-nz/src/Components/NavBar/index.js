@@ -34,11 +34,29 @@ export const NavBar = () => {
           <ul className="navbar-nav">
             <li className="nav-item align-self-center m-3">
               <NavLink
-                to={`/item`}
+                to={`/category/A`}
                 activeClassName="active-navlink"
                 className="navlink"
               >
-                <h5>items</h5>
+                <h5>Categoría A</h5>
+              </NavLink>
+            </li>
+            <li className="nav-item align-self-center m-3">
+              <NavLink
+                to={`/category/B`}
+                activeClassName="active-navlink"
+                className="navlink"
+              >
+                <h5>Categoría B</h5>
+              </NavLink>
+            </li>
+            <li className="nav-item align-self-center m-3">
+              <NavLink
+                to={`/category/C`}
+                activeClassName="active-navlink"
+                className="navlink"
+              >
+                <h5>Categoría C</h5>
               </NavLink>
             </li>
 
